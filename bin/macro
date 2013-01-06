@@ -21,7 +21,7 @@ foreach( array(
     'src/daliaIT/rough/MacroParser.php',
     'src/daliaIT/rough/SetMacro.php',
     'src/daliaIT/rough/GetMacro.php'
-)as $script){ require $script; }
+)as $script){ require __DIR__.'/../'.$script; }
 
 $lib    = new MacroLib();
 $parser = new MacroParser($lib);
