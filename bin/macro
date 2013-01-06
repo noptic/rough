@@ -1,0 +1,35 @@
+#!/usr/php
+<?php
+namespace daliaIT\rough;
+
+$usage = <<<END
+################################################################################
+usage: macro <input> [<output>]
+
+<input>:    Path to input file.
+<output>    Path to output. If the parameter is omitted the result is printed.
+            You can pass -self to override the input file.
+################################################################################
+END;
+
+if($argc < 2) die($usage);
+if(! is_readable($argv[1]) ) die("can not read file {$argv[1]}");
+if($argc > 2 && $argv[2] === '-self') $argv[2] = $argv[1];
+foreach( array(
+    'src/daliaIT/rough/IMacroLib.php',
+    'src/daliaIT/rough/MacroLib.php',
+    'src/daliaIT/rough/MacroParser.php',
+    'src/daliaIT/rough/SetMacro.php',
+    'src/daliaIT/rough/GetMacro.php'
+)as $script){ require $script; }
+
+$lib    = new MacroLib();
+$parser = new MacroParser($lib);
+$lib
+    ->setMacro('get',new GetMacro())
+    ->setMacro('set',new SetMacro());
+
+$result = $parser->replace( file_get_contents($argv[1]) );
+
+if(isset($argv[2])){ file_put_contents($argv[2], $result); }
+else { echo $result; }
