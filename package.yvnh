@@ -1,0 +1,6 @@
+type: daliaIT\co3\package\Package
+value:
+  id:           8e7c67d5-6bc7-4fbe-90bb-616b7578a119
+  src:          src
+  resource:     resource
+    
