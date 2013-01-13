@@ -1,10 +1,10 @@
 <?php
 namespace daliaIT\rough;
 class SetMacro{
-    public function __invoke($args,$content,$macroString,$indent){
+    public function __invoke($args){
         $access     = $args[0];
-        $properties = explode(',',$args[1]);
-        $result     = "$indent#@$macroString#";
+        $properties = (array) $args[1];
+        $result     = "";
         $hint       = (isset($args[2]))
             ? $args[2].' '
             : '';
@@ -13,15 +13,14 @@ class SetMacro{
             $functionName =  
                 'set' . strtoupper($property{0}) . substr($property, 1);
                 
-            $result .= 
-                 "\n$access function $functionName($hint\$value){"
-                ."\n    \$this->$property = \$value;"
-                ."\n    return \$this;"
-                ."\n}\n";
+            $result .= implode("\n",array(
+                "$access function $functionName($hint\$value){",
+                "    \$this->$property = \$value;",
+                "    return \$this;",
+                "}",
+                ''
+            ));
         }
-        
-        $result .= "#@#";
-        $result = str_replace("\n","\n$indent",$result);
         return $result;
     }
 }

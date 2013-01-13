@@ -10,7 +10,22 @@ class MacroParser
         $this->macroLib = $lib;
     }
     
-    #@get public macroLib,pattern #
+    public function replace($input){
+        $lib =$this->macroLib;
+        $argParser = new MacroArgParser();
+        $callback = function($matches) use ($lib,$argParser){
+            $indent = $matches[1];
+            $macroString = $matches[2];
+            $args = $argParser->parse($macroString);
+            $name = array_shift($args);
+            $output = $lib->runMacro($name,$args,$content,$macroString,$indent);
+            $output = "$indent#@$macroString#\n$output#@#";
+            return str_replace("\n","\n$indent", $output)."\n"; 
+        };
+        return preg_replace_callback($this->pattern, $callback, $input);
+    }
+    
+    #@get public [macroLib pattern] #
     public function getMacroLib(){
         return $this->macroLib;
     }
@@ -20,7 +35,7 @@ class MacroParser
     }
     #@#
     
-    #@set public macroLib,pattern#
+    #@set public [macroLib pattern]#
     public function setMacroLib($value){
         $this->macroLib = $value;
         return $this;
@@ -31,19 +46,4 @@ class MacroParser
         return $this;
     }
     #@#
-    
-    public function replace($input){
-        $lib =$this->macroLib;
-        $callback = function($matches) use ($lib){
-            $indent = $matches[1];
-            $macroString = $matches[2];
-            $content = (isset($matches[3]))
-                ? $matches[3]
-                : '';
-            $args = explode(" ",$macroString);
-            $name = array_shift($args);
-            return  $lib->runMacro($name,$args,$content,$macroString,$indent);
-        };
-        return preg_replace_callback($this->pattern, $callback, $input);
-    }
 }
