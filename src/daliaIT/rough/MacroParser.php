@@ -26,20 +26,25 @@ class MacroParser
     }
     
     #@access public public [macroLib pattern] #
+    
     public function getMacroLib(){
         return $this->macroLib;
     }
+    
     public function getPattern(){
         return $this->pattern;
     }
+    
     public function setMacroLib($value){
         $this->macroLib = $value;
         return $this;
     }
+    
     public function setPattern($value){
         $this->pattern = $value;
         return $this;
     }
     #@#
+
 
 }

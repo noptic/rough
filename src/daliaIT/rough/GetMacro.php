@@ -10,7 +10,7 @@ class GetMacro{
                 'get' . strtoupper($property{0}) . substr($property, 1);
                 
             $result .= 
-                 "$access function $functionName(){"
+                 "\n$access function $functionName(){"
                 ."\n    return \$this->$property;"
                 ."\n}\n";
         }

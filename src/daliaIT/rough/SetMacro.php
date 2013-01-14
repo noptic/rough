@@ -14,6 +14,7 @@ class SetMacro{
                 'set' . strtoupper($property{0}) . substr($property, 1);
                 
             $result .= implode("\n",array(
+                '',
                 "$access function $functionName($hint\$value){",
                 "    \$this->$property = \$value;",
                 "    return \$this;",
