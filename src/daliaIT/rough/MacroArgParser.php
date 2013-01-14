@@ -107,7 +107,7 @@ class MacroArgParser
         return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
     }
     
-    #@access public public [startList startLiteral endList endLiteral escape whiteSpace] #
+    #@access public public [startList startLiteral endList endLiteral escape ] string#
     
     public function getStartList(){
         return $this->startList;
@@ -163,7 +163,8 @@ class MacroArgParser
         return $this;
     }
     #@#
-
+    
+    #@access public public whiteSpace array@#
 
     
 }

@@ -12,18 +12,18 @@ class AccessMacro{
         }
         $getAccess  = $args[0];
         $setAccess  = $args[1];
-        $hints      = (isset($args[2]))
-            ? $args[2]
+        $hints      = (isset($args[3]))
+            ? $args[3]
             : false;
         $properties = (array) $args[2];
         $getMacro   = new GetMacro();
         $setMacro   = new SetMacro();
         $result     = '';
         if($getAccess !== 'none'){
-            $result .= $getMacro(array($getAccess,$properties));
+            $result .= $getMacro(array($getAccess,$properties,$hints));
         }
         if($setAccess !== 'none'){
-            $result .= $setMacro(array($setAccess,$properties));
+            $result .= $setMacro(array($setAccess,$properties,$hints));
         }
         return $result;
     }
