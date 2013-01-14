@@ -18,7 +18,7 @@ class MacroParser
             $macroString = $matches[2];
             $args = $argParser->parse($macroString);
             $name = array_shift($args);
-            $output = $lib->runMacro($name,$args,$content,$macroString,$indent);
+            $output = $lib->runMacro($name,$args);
             $output = "$indent#@$macroString#\n$output#@#";
             return str_replace("\n","\n$indent", $output)."\n"; 
         };
