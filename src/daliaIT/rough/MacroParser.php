@@ -25,26 +25,37 @@ class MacroParser
         return preg_replace_callback($this->pattern, $callback, $input);
     }
     
-    #@access public public [macroLib pattern] #
+    #@access public public macroLib IMacroLib#
     
+    #:IMacroLib
     public function getMacroLib(){
         return $this->macroLib;
     }
     
-    public function getPattern(){
-        return $this->pattern;
-    }
-    
-    public function setMacroLib($value){
+    #:this
+    public function setMacroLib(IMacroLib $value){
         $this->macroLib = $value;
-        return $this;
-    }
-    
-    public function setPattern($value){
-        $this->pattern = $value;
         return $this;
     }
     #@#
 
+    #@access public public pattern string#
+    
+    #:string
+    public function getPattern(){
+        return $this->pattern;
+    }
+    
+    #:this
+    public function setPattern($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
+        $this->pattern = $value;
+        return $this;
+    }
+    #@#
 
 }

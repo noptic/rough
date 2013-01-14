@@ -109,62 +109,102 @@ class MacroArgParser
     
     #@access public public [startList startLiteral endList endLiteral escape ] string#
     
+    #:string
     public function getStartList(){
         return $this->startList;
     }
     
+    #:string
     public function getStartLiteral(){
         return $this->startLiteral;
     }
     
+    #:string
     public function getEndList(){
         return $this->endList;
     }
     
+    #:string
     public function getEndLiteral(){
         return $this->endLiteral;
     }
     
+    #:string
     public function getEscape(){
         return $this->escape;
     }
     
-    public function getWhiteSpace(){
-        return $this->whiteSpace;
-    }
-    
+    #:this
     public function setStartList($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
         $this->startList = $value;
         return $this;
     }
     
+    #:this
     public function setStartLiteral($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
         $this->startLiteral = $value;
         return $this;
     }
     
+    #:this
     public function setEndList($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
         $this->endList = $value;
         return $this;
     }
     
+    #:this
     public function setEndLiteral($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
         $this->endLiteral = $value;
         return $this;
     }
     
+    #:this
     public function setEscape($value){
+        if(! is_string($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a string but got a '.gettype($value)
+           );
+        }
         $this->escape = $value;
         return $this;
     }
+    #@#
+
+
     
-    public function setWhiteSpace($value){
+    #@access public public whiteSpace array#
+    
+    #:array
+    public function getWhiteSpace(){
+        return $this->whiteSpace;
+    }
+    
+    #:this
+    public function setWhiteSpace(array $value){
         $this->whiteSpace = $value;
         return $this;
     }
     #@#
-    
-    #@access public public whiteSpace array@#
 
     
 }

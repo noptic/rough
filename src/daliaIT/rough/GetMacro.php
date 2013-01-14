@@ -6,7 +6,7 @@ class GetMacro{
         $properties = (array) $args[1];
         $typeHints = (isset($args[2]))
             ? $args[2]
-            : false;
+            : 'mixed';
         if(! is_array($typeHints)){
             $typeHints = array_fill(0,count($properties),$typeHints);
         }
