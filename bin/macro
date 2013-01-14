@@ -10,6 +10,7 @@ usage: macro <input> [<output>]
 <output>    Path to output. If the parameter is omitted the result is printed.
             You can pass -self to override the input file.
 ################################################################################
+
 END;
 
 if($argc < 2) die($usage);
@@ -21,6 +22,7 @@ foreach( array(
     'src/daliaIT/rough/MacroParser.php',
     'src/daliaIT/rough/SetMacro.php',
     'src/daliaIT/rough/GetMacro.php',
+    'src/daliaIT/rough/AccessMacro.php',
     'src/daliaIT/rough/MacroArgParser.php'
 )as $script){ require __DIR__.'/../'.$script; }
 
@@ -28,7 +30,8 @@ $lib    = new MacroLib();
 $parser = new MacroParser($lib);
 $lib
     ->setMacro('get',new GetMacro())
-    ->setMacro('set',new SetMacro());
+    ->setMacro('set',new SetMacro())
+    ->setMacro('access',new AccessMacro());
 
 $result = $parser->replace( file_get_contents($argv[1]) );
 

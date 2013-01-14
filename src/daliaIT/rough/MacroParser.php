@@ -25,25 +25,21 @@ class MacroParser
         return preg_replace_callback($this->pattern, $callback, $input);
     }
     
-    #@get public [macroLib pattern] #
+    #@access public public [macroLib pattern] #
     public function getMacroLib(){
         return $this->macroLib;
     }
-    
     public function getPattern(){
         return $this->pattern;
     }
-    #@#
-    
-    #@set public [macroLib pattern]#
     public function setMacroLib($value){
         $this->macroLib = $value;
         return $this;
     }
-    
     public function setPattern($value){
         $this->pattern = $value;
         return $this;
     }
     #@#
+
 }

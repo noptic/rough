@@ -107,6 +107,50 @@ class MacroArgParser
         return preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY);
     }
     
-    #@access public public [startList startLiteral endList endLiteral escape whiteSpace] @#
+    #@access public public [startList startLiteral endList endLiteral escape whiteSpace] #
+    public function getStartList(){
+        return $this->startList;
+    }
+    public function getStartLiteral(){
+        return $this->startLiteral;
+    }
+    public function getEndList(){
+        return $this->endList;
+    }
+    public function getEndLiteral(){
+        return $this->endLiteral;
+    }
+    public function getEscape(){
+        return $this->escape;
+    }
+    public function getWhiteSpace(){
+        return $this->whiteSpace;
+    }
+    public function setStartList($value){
+        $this->startList = $value;
+        return $this;
+    }
+    public function setStartLiteral($value){
+        $this->startLiteral = $value;
+        return $this;
+    }
+    public function setEndList($value){
+        $this->endList = $value;
+        return $this;
+    }
+    public function setEndLiteral($value){
+        $this->endLiteral = $value;
+        return $this;
+    }
+    public function setEscape($value){
+        $this->escape = $value;
+        return $this;
+    }
+    public function setWhiteSpace($value){
+        $this->whiteSpace = $value;
+        return $this;
+    }
+    #@#
+
     
 }
