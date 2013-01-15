@@ -6,13 +6,17 @@ class ImportMacro{
     protected
         $stripTokens = array(T_COMMENT,T_DOC_COMMENT);
         
-    public function __invoke($args,$parser){
-        $reflect = new ReflectionClass($args[0]);
+    public function __invoke($args,$parser){     
         $code = $parser->replace( 
-            file_get_contents( $reflect->getFileName() ),
+            file_get_contents( $this->getClassFileName($args[0]) ),
             array('stripMacros' => true)  
         );
         return $this->extractBody($code);
+    }
+    
+    protected function getClassFileName($class){
+        $reflect = new ReflectionClass($class);
+        return $reflect->getFileName();
     }
     
     public function extractBody($sourcecode){
