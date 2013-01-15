@@ -4,23 +4,40 @@ class MacroParser
 {
     protected
         $macroLib,
-        $pattern =  '/^([ \t]*)#@(.*?)(?:@#|#(.*?)#@#)/sm';
+        $pattern =  '/^([ \t]*)#@(.*?)(?:@#|#(.*?)#@#)/sm',
+        $options = array(
+            'indentOutput'  => true,
+            'stripMacros'   => false,
+        );
     
     public function __construct(IMacroLib $lib){
         $this->macroLib = $lib;
     }
     
-    public function replace($input){
+    public function replace($input,array $options=array()){
         $lib =$this->macroLib;
         $argParser = new MacroArgParser();
-        $callback = function($matches) use ($lib,$argParser){
+        $parser = $this;
+        $options = array_replace($this->options,$options);
+        
+        $callback = function($matches) use ($lib,$argParser,$parser,$options){
             $indent = $matches[1];
             $macroString = $matches[2];
             $args = $argParser->parse($macroString);
             $name = array_shift($args);
-            $output = $lib->runMacro($name,$args);
-            $output = "$indent#@$macroString#\n$output#@#";
-            return str_replace("\n","\n$indent", $output)."\n"; 
+            $output = $lib->runMacro($name,$args,$parser);
+            if(!$options['stripMacros']){
+                $output = "#@$macroString#\n$output#@#";    
+            }
+            if($options['indentOutput']){
+                $buffer = array();
+                foreach(explode("\n",$output) as $line){
+                    $buffer[] = "$indent$line";
+                }
+                $output = implode("\n",$buffer);
+                unset($buffer);
+            }
+            return $output; 
         };
         return preg_replace_callback($this->pattern, $callback, $input);
     }

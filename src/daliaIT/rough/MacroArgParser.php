@@ -205,6 +205,4 @@ class MacroArgParser
         return $this;
     }
     #@#
-
-    
 }

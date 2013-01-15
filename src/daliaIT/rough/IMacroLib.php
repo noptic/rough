@@ -1,5 +1,5 @@
 <?php
 namespace daliaIT\rough;
 interface IMacroLib{
-    function runMacro($name,$args);
+    function runMacro($name,$args,$parser);
 }

@@ -5,9 +5,9 @@ class MacroLib implements IMacroLib{
     protected
         $macros = array();
         
-    function runMacro($name,$args){
+    function runMacro($name,$args,$parser){
         $macro = $this->getMacro($name);
-        return $macro($args);
+        return $macro($args,$parser);
     }
     
     public function getMacro($name){

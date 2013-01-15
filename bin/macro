@@ -23,6 +23,7 @@ foreach( array(
     'src/daliaIT/rough/SetMacro.php',
     'src/daliaIT/rough/GetMacro.php',
     'src/daliaIT/rough/AccessMacro.php',
+    'src/daliaIT/rough/ImportMacro.php',
     'src/daliaIT/rough/MacroArgParser.php'
 )as $script){ require __DIR__.'/../'.$script; }
 
@@ -31,7 +32,8 @@ $parser = new MacroParser($lib);
 $lib
     ->setMacro('get',new GetMacro())
     ->setMacro('set',new SetMacro())
-    ->setMacro('access',new AccessMacro());
+    ->setMacro('access',new AccessMacro())
+    ->setMacro('import',new ImportMacro());
 
 $result = $parser->replace( file_get_contents($argv[1]) );
 
