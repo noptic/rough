@@ -1,8 +1,14 @@
 <?php
 namespace daliaIT\rough;
+use InvalidArgumentException;
 class GetMacro{
     public function __invoke($args){
         $access     = $args[0];
+        if(count($args)<2){
+            throw new InvalidArgumentException(
+                "missing arguments for get macro. Usage: 'get <access> <properties>'"
+            );
+        }
         $properties = (array) $args[1];
         $typeHints = (isset($args[2]))
             ? $args[2]

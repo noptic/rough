@@ -23,8 +23,9 @@ foreach( array(
     'src/daliaIT/rough/SetMacro.php',
     'src/daliaIT/rough/GetMacro.php',
     'src/daliaIT/rough/AccessMacro.php',
+    'src/daliaIT/rough/ClassFileFinder.php',
     'src/daliaIT/rough/ImportMacro.php',
-    'src/daliaIT/rough/MacroArgParser.php'
+    'src/daliaIT/rough/MacroArgParser.php',
 )as $script){ require __DIR__.'/../'.$script; }
 
 $lib    = new MacroLib();

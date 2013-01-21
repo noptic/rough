@@ -4,21 +4,24 @@ use ReflectionClass;
 
 class ImportMacro{
     protected
-        $stripTokens = array(T_COMMENT,T_DOC_COMMENT);
+        $stripTokens = array(T_COMMENT,T_DOC_COMMENT),
+        $classFileFinder;
         
+    public function __construct(ClassFileFinder $finder=null){
+        if(! $finder){
+            $finder = new ClassFileFinder();
+        }
+        $this->classFileFinder = $finder;
+    }
+    
     public function __invoke($args,$parser){     
         $code = $parser->replace( 
-            file_get_contents( $this->getClassFileName($args[0]) ),
+            file_get_contents( $this->classFileFinder->getClassFileName($args[0]) ),
             array('stripMacros' => true)  
         );
         return $this->extractBody($code);
     }
-    
-    protected function getClassFileName($class){
-        $reflect = new ReflectionClass($class);
-        return $reflect->getFileName();
-    }
-    
+        
     public function extractBody($sourcecode){
         $tokens = token_get_all($sourcecode);
         $code = '';
@@ -49,4 +52,31 @@ class ImportMacro{
         }
         return $code;
     }
+    
+    #@access public public classFileFinder ClassFileFinder#
+    
+    #:ClassFileFinder
+    public function getClassFileFinder(){
+        return $this->classFileFinder;
+    }
+    
+    #:this
+    public function setClassFileFinder(ClassFileFinder $value){
+        $this->classFileFinder = $value;
+        return $this;
+    }
+    #@#
+    #@access public public stripTokens array#
+    
+    #:array
+    public function getStripTokens(){
+        return $this->stripTokens;
+    }
+    
+    #:this
+    public function setStripTokens(array $value){
+        $this->stripTokens = $value;
+        return $this;
+    }
+    #@#
 }

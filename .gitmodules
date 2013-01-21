@@ -1,0 +1,9 @@
+[submodule "external/liz"]
+	path = external/liz
+	url = git@github.com:noptic/liz.git
+[submodule "external/CoLoad"]
+	path = external/CoLoad
+	url = git://github.com/noptic/CoLoad.git
+[submodule "external/spyc"]
+	path = external/spyc
+	url = git://github.com/mustangostang/spyc.git

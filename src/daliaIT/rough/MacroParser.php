@@ -1,5 +1,7 @@
 <?php
 namespace daliaIT\rough;
+use Exception,
+    RuntimeException;
 class MacroParser
 {
     protected
@@ -25,7 +27,14 @@ class MacroParser
             $macroString = $matches[2];
             $args = $argParser->parse($macroString);
             $name = array_shift($args);
-            $output = $lib->runMacro($name,$args,$parser);
+            try{
+                $output = $lib->runMacro($name,$args,$parser);
+            } catch(Exception $e){
+                throw new RuntimeException(
+                    "Processing macro string '$macroString' failed with message:\n"
+                    .$e->getMessage()
+                );
+            }
             if(!$options['stripMacros']){
                 $output = "#@$macroString#\n$output#@#";    
             }
