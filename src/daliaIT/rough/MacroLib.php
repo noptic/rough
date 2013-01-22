@@ -21,4 +21,18 @@ class MacroLib implements IMacroLib{
         $this->macros[$name] = $macro;
         return $this;
     }
+    
+    #@access public public macros array#
+    
+    #:array
+    public function getMacros(){
+        return $this->macros;
+    }
+    
+    #:this
+    public function setMacros(array $value){
+        $this->macros = $value;
+        return $this;
+    }
+    #@#
 }

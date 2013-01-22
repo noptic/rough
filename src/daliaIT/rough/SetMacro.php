@@ -54,5 +54,17 @@ class SetMacro{
         return $result;
     }
     
-    #@access public public validationFunctions array@#
+    #@access public public validationFunctions array#
+    
+    #:array
+    public function getValidationFunctions(){
+        return $this->validationFunctions;
+    }
+    
+    #:this
+    public function setValidationFunctions(array $value){
+        $this->validationFunctions = $value;
+        return $this;
+    }
+    #@#
 }

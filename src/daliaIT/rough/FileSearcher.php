@@ -1,7 +1,7 @@
 <?php
 namespace daliaIT\rough;
 class FileSearcher
-{         
+{    
     public function search($data){
         $results = glob($data);
         if(!$results) return array();
