@@ -40,6 +40,14 @@ class Build
             );
         } 
         $buildInfo = spyc_load_file($buildFilePath);
+        foreach(array('daliaIT','rough','command','Build') as $index => $key){
+            if(! isset($buildInfo[$key]) ){
+                throw new RuntimeException(
+                    "Invalid build file. Missing node #$index '$key'"
+                );
+            }
+            $buildInfo = $buildInfo[$key];
+        }
         if(! isset($buildInfo['source']) ){
             throw new RuntimeException(
                 "Invalid build file. No source directory set"    
@@ -119,14 +127,14 @@ class Build
         return $files;
     }
     
-    #@access public parser MacroParser#
+    #@access public public MacroParser#
     
     public function getMacroParser(){
         return $this->MacroParser;
     }
     
     #:this
-    parser function setMacroParser($value){
+    public function setMacroParser($value){
         $this->MacroParser = $value;
         return $this;
     }
