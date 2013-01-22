@@ -1,4 +1,168 @@
 <?php
+/*/
+type:       class
+author:     Oliver Anan <oliver@ananit.de>
+tags:       [macro, set, setter, chain]
+
+SetMacro
+================================================================================
+Creates a setter for one or more properties.
+
+The generated object is chainable and always return the called object instance.
+
+The setters can be made typestrict using type hinting or 'is_...' methods.
+Types which use validation methods:
+ 
+ - bool
+ - float   
+ - int
+ - numeric
+ - scalar
+ - string 
+ - object
+ 
+    #@set public sampleProperty int#
+    
+    #:this
+    public function setSampleProperty($value){
+        if(! is_int($value)){
+           throw new \InvalidArgumentException(
+             __METHOD__ .' expects a int but got a '.gettype($value)
+           );
+        }
+        $this->sampleProperty = $value;
+        return $this;
+    }
+    #@#
+    
+Anything else will be used as literal typehint
+
+    #@set public sampleProperty qwerty#
+    
+    #:this
+    public function setSampleProperty(qwerty $value){
+        $this->sampleProperty = $value;
+        return $this;
+    }
+    #@#
+    
+Syntax
+--------------------------------------------------------------------------------
+
+    set <acess> <properties> [type=mixe]d
+    
+access
+:   The visibility of the setter method.
+:   Single word
+:   Required argument.
+    
+
+properties
+:   The properties which the setters point to.
+:   Single word or list.
+:   Required argument.
+    
+type
+:   The type of the property the setter points to.
+:   Optional argument. Default is 'mixed'.
+:   ICreates a typestrict setter.
+     
+Examples
+--------------------------------------------------------------------------------
+Allow public write acces to name:
+
+    class User
+    {
+        protected 
+            $name;
+            
+        #@set public name#
+        
+        #:this
+        public function setName($value){
+            $this->name = $value;
+            return $this;
+        }
+        #@#
+    }
+    
+Create type strict setters
+
+    class User
+    {
+        protected
+            $name,
+            $boss,
+            $comments;
+        #@set public name string#
+        
+        #:this
+        public function setName($value){
+            if(! is_string($value)){
+               throw new \InvalidArgumentException(
+                 __METHOD__ .' expects a string but got a '.gettype($value)
+               );
+            }
+            $this->name = $value;
+            return $this;
+        }
+        #@#
+        
+        #@set public boss User#
+        
+        #:this
+        public function setBoss(User $value){
+            $this->boss = $value;
+            return $this;
+        }
+        #@#
+        #@set public comments array#
+        
+        #:this
+        public function setComments(array $value){
+            $this->comments = $value;
+            return $this;
+        }
+        #@#
+    }
+    
+create multiple setters:
+
+    class User
+    {
+        protected
+            $givenName,
+            $familyName;
+            
+        #@set public [givenName familyName] string#
+        
+        #:this
+        public function setGivenName($value){
+            if(! is_string($value)){
+               throw new \InvalidArgumentException(
+                 __METHOD__ .' expects a string but got a '.gettype($value)
+               );
+            }
+            $this->givenName = $value;
+            return $this;
+        }
+        
+        #:this
+        public function setFamilyName($value){
+            if(! is_string($value)){
+               throw new \InvalidArgumentException(
+                 __METHOD__ .' expects a string but got a '.gettype($value)
+               );
+            }
+            $this->familyName = $value;
+            return $this;
+        }
+        #@# 
+    }
+    
+Source
+--------------------------------------------------------------------------------
+/*/
 namespace daliaIT\rough;
 class SetMacro{
     protected

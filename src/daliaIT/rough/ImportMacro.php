@@ -1,4 +1,31 @@
 <?php
+/*/
+type:       class
+author:     Oliver Anan <oliver@ananit.de>
+tags:       [macro, import]
+
+ImportMacro
+================================================================================
+Imports the body of a class.
+
+Syntax
+--------------------------------------------------------------------------------
+
+    import <target>
+    
+target
+:   The visibility of the getter method.
+:    Single word, or list.
+:    Required argument.
+    
+
+     
+Examples
+--------------------------------------------------------------------------------
+    
+Source
+--------------------------------------------------------------------------------
+/*/
 namespace daliaIT\rough;
 use ReflectionClass;
 

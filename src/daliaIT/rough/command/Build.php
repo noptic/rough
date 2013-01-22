@@ -119,14 +119,14 @@ class Build
         return $files;
     }
     
-    #@access public parser MacroParser#
+    #@access public public MacroParser#
     
     public function getMacroParser(){
         return $this->MacroParser;
     }
     
     #:this
-    parser function setMacroParser($value){
+    public function setMacroParser($value){
         $this->MacroParser = $value;
         return $this;
     }
