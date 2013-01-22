@@ -1,0 +1,6 @@
+daliaIT:
+  rough:
+    command:
+      Build:
+        source: [src]
+        target: src
