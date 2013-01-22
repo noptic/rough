@@ -1,4 +1,12 @@
 rough
-=====
+================================================================================
+Command line tool for PHP.
 
-A set of rough php helper scripts for common codding tasks
+Rough provides a IDE independent way to autmate repetive tasks.
+
+Macros
+--------------------------------------------------------------------------------
+Rough Macros use formated comments to generate code.
+If you use a macro parser on 
+    
+    #@get public foo#

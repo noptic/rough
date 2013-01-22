@@ -45,7 +45,7 @@ $args           = $argParser->parse(implode(' ',$argv));
 try{
     $handler->run($args);
 } catch(Exception $e){
-    echo "failed with message\n".$e->getMessage()."\n";//TODO print eception info
+    echo "$command failed:\n".$e->getMessage()."\n";
     exit(2);
 }
 exit(0);
