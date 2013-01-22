@@ -15,6 +15,7 @@ use Exception,
 class Build
 {
     protected
+    #:MacroParser
         $parser;
         
     public function __construct(){
@@ -117,4 +118,6 @@ class Build
         }
         return $files;
     }
+    
+    #@access public parser MacroParser@#
 }

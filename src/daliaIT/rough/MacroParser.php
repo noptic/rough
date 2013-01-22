@@ -5,17 +5,22 @@ use Exception,
 class MacroParser
 {
     protected
+    #:IMacroLib
         $macroLib,
+    #:string
         $pattern =  '/^([ \t]*)#@(.*?)(?:@#|#(.*?)#@#)/sm',
+    #:array
         $options = array(
             'indentOutput'  => true,
             'stripMacros'   => false,
         );
     
+    #:this
     public function __construct(IMacroLib $lib){
         $this->macroLib = $lib;
     }
     
+    #_string
     public function replace($input,array $options=array()){
         $lib =$this->macroLib;
         $argParser = new MacroArgParser();
@@ -83,5 +88,4 @@ class MacroParser
         return $this;
     }
     #@#
-
 }

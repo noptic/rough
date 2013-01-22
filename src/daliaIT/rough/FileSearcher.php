@@ -1,13 +1,7 @@
 <?php
 namespace daliaIT\rough;
 class FileSearcher
-{         
-    protected
-    #>bool
-        $isInFilter = true,
-        $isOutFilter = false;
-        #<
-        
+{             
     public function search($data){
         $results = glob($data);
         if(!$results) return array();
