@@ -1,6 +1,7 @@
 <?php
 namespace daliaIT\rough\command;
-use Exception,
+use Spyc,
+    Exception,
     InvalidArgumentException,
     RuntimeException,
     daliaIT\rough\FileSearcher,
@@ -68,6 +69,10 @@ class Build
             $out = "$base/{$buildInfo['target']}/$shortName";
             $this->buildFile($file,  $out);
         }
+        if( isset($buildInfo['index'])){
+            $index = Spyc::YAMLDump($classList);
+            file_put_contents("{$base}/{$buildInfo['index']}",$index);
+        }
         return $this;
     }
     
@@ -78,6 +83,7 @@ class Build
             ->getMacro('import')->setClassFileFinder($finder);
         return $this;
     }
+    
     protected function createClassList(array $files){
         $classList = array();
         foreach($files as $shortName => $file){

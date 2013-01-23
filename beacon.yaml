@@ -2,5 +2,6 @@ daliaIT:
   rough:
     command:
       Build:
-        source: [src]
-        target: src
+        source:     src
+        target:     src
+        index:      classes.yaml
