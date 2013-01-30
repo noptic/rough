@@ -1,6 +1,6 @@
 {
     "name": "dalia-it/rough",
-    "description": "Genrated source code with embeded macros\"",
+    "description": "Adds macro support to composer"",
     "license": "MIT",
     "authors": [
         {
