@@ -1,6 +1,7 @@
 {
     "name": "dalia-it/rough",
     "description": "Genrated source code with embeded macros\"",
+    "license": "MIT",
     "authors": [
         {
             "name": "Oliver Anan",
