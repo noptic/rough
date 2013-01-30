@@ -1,0 +1,13 @@
+{
+    "name": "dalia-it/rough",
+    "description": "Genrated source code with embeded macros\"",
+    "authors": [
+        {
+            "name": "Oliver Anan",
+            "email": "oliver@ananit.de"
+        }
+    ],
+    "require": {
+
+    }
+}

@@ -40,8 +40,8 @@ class Build
                 "Can not read build file '$buildFilePath'"    
             );
         } 
-        $buildInfo = spyc_load_file($buildFilePath);
-        foreach(array('daliaIT','rough','command','Build') as $index => $key){
+        $buildInfo = json_decode(file_get_contents($buildFilePath),true);
+        foreach(array('extra','dalia-it','rough','build') as $index => $key){
             if(! isset($buildInfo[$key]) ){
                 throw new RuntimeException(
                     "Invalid build file. Missing node #$index '$key'"

@@ -16,7 +16,7 @@ USAGE
 );
 
 //externals
-require __DIR__.'/../external/liz/Liz.php';
+require __DIR__.'/../external/liz/liz.php';
 Liz::load(__DIR__.'/../external',array(
     'class daliaIT\\CoLoad\\CoLoad' => 'CoLoad/CoLoad.php',
     'function spyc_load_file'       => 'spyc/Spyc.php'
