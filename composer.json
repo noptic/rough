@@ -6,6 +6,7 @@
     },
     "description": "Adds macro support to composer",
     "license": "MIT",
+    "bin": ["bin/rough"],
     "authors": [
         {
             "name": "Oliver Anan",
