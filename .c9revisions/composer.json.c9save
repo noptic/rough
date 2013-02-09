@@ -50,3 +50,4 @@
 {"ts":1360372122009,"patch":[[{"diffs":[[0,"aster\"\n    }"],[1,","],[0,"\n    \"extra\""]],"start1":339,"start2":339,"length1":24,"length2":25}]],"length":561,"saved":false}
 {"ts":1360373593195,"patch":[[{"diffs":[[0,"e\": \"src"],[1,"/"],[0,"\",\n     "]],"start1":462,"start2":462,"length1":16,"length2":17},{"diffs":[[0,"put\": \"b"],[1,"\""],[0,"uild"],[-1,"\""],[1,"/"],[0,"\n       "]],"start1":498,"start2":498,"length1":21,"length2":22}]],"length":563,"saved":false}
 {"ts":1360373609072,"patch":[[{"diffs":[[0,": \"b"],[-1,"\""],[0,"uild/"],[1,"\""],[0,"\n   "]],"start1":502,"start2":502,"length1":14,"length2":14}]],"length":563,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1360374749891,"patch":[[{"diffs":[[0,"/\" }\n    },\n"],[1,"    \"description\": \"Adds macro support to composer\",\n    \"license\": \"MIT\",\n"],[0,"    \"authors"]],"start1":156,"start2":156,"length1":24,"length2":99}]],"length":638,"saved":false}

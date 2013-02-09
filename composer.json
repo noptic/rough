@@ -4,6 +4,8 @@
     "autoload": {
         "psr-0": { "daliaIT\\rough": "src/" }
     },
+    "description": "Adds macro support to composer",
+    "license": "MIT",
     "authors": [
         {
             "name": "Oliver Anan",
