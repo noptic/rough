@@ -1,5 +1,0 @@
-command:
-  build:
-    handler: daliaIT\rough\command\Build
-    usage: >
-      Lorem Ipsum
