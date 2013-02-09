@@ -1,0 +1,17 @@
+name:       rough
+version:    0.0.2-alpah1
+commands:
+    macros:
+        controller: daliaIT\rough\command\RunMacros
+        help: >
+            Runs all embeded macros
+        macros:
+            get:    daliaIT\rough\GetMacro
+            set:    daliaIT\rough\SetMacro
+            access: daliaIT\rough\AccessMacro
+            import: daliaIT\rough\ImportMacro
+            
+    which:
+         controller: daliaIT\rough\command\Which
+         help: >
+            Prints which file the autoloader would include for the class.

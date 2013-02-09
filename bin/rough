@@ -1,51 +1,12 @@
 <?php
-use daliaIT\liz\Liz;
-
-if(count($argv) <2) die (
-<<<USAGE
-Usage
-================================================================================
-rough <command>
-
-Example:
---------------------------------------------------------------------------------
-rough build src -self
-rough about
-
-USAGE
-);
-
-//externals
-require __DIR__.'/../external/liz/liz.php';
-Liz::load(__DIR__.'/../external',array(
-    'class daliaIT\\CoLoad\\CoLoad' => 'CoLoad/CoLoad.php',
-    'function spyc_load_file'       => 'spyc/Spyc.php'
-));
-
-//autoloader
-$classMapFile   = sys_get_temp_dir().'/'.md5(__FILE__).'/classMap.json'; 
-$loader         = new daliaIT\CoLoad\CoLoad($classMapFile);
-
-$loader->addSource(__DIR__.'/../src')->register();
-
-//run command
-$base           = array_shift($argv);
-$configFile     = __DIR__.'/../rough.yaml';
-$config         = spyc_load_file($configFile);
-$command        = array_shift($argv);
-
-if(! isset($config['command'][$command]) ){
-    echo ("Unknown command '$command'\n");
-    exit(1);
-}
-
-$handler        = new $config['command'][$command]['handler'];
-$argParser      = new daliaIT\rough\MacroArgParser();
-$args           = $argParser->parse(implode(' ',$argv));
-try{
-    $handler->run($args);
-} catch(Exception $e){
-    echo "$command failed:\n".$e->getMessage()."\n";
-    exit(2);
-}
-exit(0);
+call_user_func( function(){
+    $autoloader = require __DIR__."/../autoload.php";
+    $finder = new daliaIT\rough\ComposerClassFileFinder($autoloader);
+    daliaIT\rough\ImportMacro::setClassFileFinder($finder);
+    daliaIT\clayball\YamlAppParser::mk()
+    ->build(
+        dirname(__DIR__).'/app/rough.yaml',
+       array('loader' => $autoloader)
+    )
+    ->run();
+});

@@ -1,0 +1,1 @@
+{"ts":1360263568755,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<?php\nforeach( array('/../../autoload.php','/vendor/autoload.php') as $autoloader){\n    if( file_exists(__DIR__.$autoloader) ){ \n        return require __DIR__.$autoloader; \n    }\n}"]],"start1":0,"start2":0,"length1":0,"length2":181}]],"length":181}

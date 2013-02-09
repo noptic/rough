@@ -1,0 +1,28 @@
+{"ts":1357412686464,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1357412688424,"patch":[[{"diffs":[[1,"pi"]],"start1":0,"start2":0,"length1":0,"length2":2}]],"length":2,"saved":false}
+{"ts":1357412689804,"patch":[[{"diffs":[[-1,"pi"]],"start1":0,"start2":0,"length1":2,"length2":0}]],"length":0,"saved":false}
+{"ts":1357412692448,"patch":[[{"diffs":[[1,"name"]],"start1":0,"start2":0,"length1":0,"length2":4}]],"length":4,"saved":false}
+{"ts":1357412694865,"patch":[[{"diffs":[[0,"name"],[1,"space "]],"start1":0,"start2":0,"length1":4,"length2":10}]],"length":10,"saved":false}
+{"ts":1357412698433,"patch":[[{"diffs":[[1,"<\n"],[0,"namespac"]],"start1":0,"start2":0,"length1":8,"length2":10}]],"length":12,"saved":false}
+{"ts":1357412699650,"patch":[[{"diffs":[[0,"<"],[1,"?p"],[0,"\nnamespa"]],"start1":0,"start2":0,"length1":9,"length2":11}]],"length":14,"saved":false}
+{"ts":1357412700841,"patch":[[{"diffs":[[0,"<?p"],[1,"hp"],[0,"\nnamespa"]],"start1":0,"start2":0,"length1":11,"length2":13}]],"length":16,"saved":false}
+{"ts":1357412702993,"patch":[[{"diffs":[[0,"mespace "],[1," "]],"start1":8,"start2":8,"length1":8,"length2":9}]],"length":17,"saved":false}
+{"ts":1357412706619,"patch":[[{"diffs":[[0,"mespace "],[1,"dali"],[0," "]],"start1":8,"start2":8,"length1":9,"length2":13}]],"length":21,"saved":false}
+{"ts":1357412707948,"patch":[[{"diffs":[[0,"ace dali"],[1,"aI"],[0," "]],"start1":12,"start2":12,"length1":9,"length2":11}]],"length":23,"saved":false}
+{"ts":1357412708997,"patch":[[{"diffs":[[0,"e daliaI"],[1,"T"],[0," "]],"start1":14,"start2":14,"length1":9,"length2":10}]],"length":24,"saved":false}
+{"ts":1357412710207,"patch":[[{"diffs":[[0," daliaIT"],[1,"\\"],[0," "]],"start1":15,"start2":15,"length1":9,"length2":10}]],"length":25,"saved":false}
+{"ts":1357412723734,"patch":[[{"diffs":[[0,"daliaIT\\"],[1,"rough"],[0," "]],"start1":16,"start2":16,"length1":9,"length2":14}]],"length":30,"saved":false}
+{"ts":1357412725802,"patch":[[{"diffs":[[0,"IT\\rough"],[1,";"],[0," "]],"start1":21,"start2":21,"length1":9,"length2":10}]],"length":31,"saved":false}
+{"ts":1357412728723,"patch":[[{"diffs":[[0,"T\\rough;"],[-1," "],[1,"\n"]],"start1":22,"start2":22,"length1":9,"length2":9}]],"length":31,"saved":false}
+{"ts":1357412732463,"patch":[[{"diffs":[[0,"\\rough;\n"],[1,"class "]],"start1":23,"start2":23,"length1":8,"length2":14}]],"length":37,"saved":false}
+{"ts":1357412745596,"patch":[[{"diffs":[[0,";\nclass "],[1,"To"]],"start1":29,"start2":29,"length1":8,"length2":10}]],"length":39,"saved":false}
+{"ts":1357412747500,"patch":[[{"diffs":[[0,"class To"],[1,"ken"]],"start1":31,"start2":31,"length1":8,"length2":11}]],"length":42,"saved":false}
+{"ts":1357412749954,"patch":[[{"diffs":[[0,"ss Token"],[1,"izer"]],"start1":34,"start2":34,"length1":8,"length2":12}]],"length":46,"saved":false}
+{"ts":1357412754026,"patch":[[{"diffs":[[0,"okenizer"],[1," "]],"start1":38,"start2":38,"length1":8,"length2":9}]],"length":47,"saved":false}
+{"ts":1357412756117,"patch":[[{"diffs":[[0,"kenizer "],[1,"ex"]],"start1":39,"start2":39,"length1":8,"length2":10}]],"length":49,"saved":false}
+{"ts":1357412758125,"patch":[[{"diffs":[[0,"izer"],[-1," ex"]],"start1":42,"start2":42,"length1":7,"length2":4}]],"length":46,"saved":false}
+{"ts":1357412760181,"patch":[[{"diffs":[[0,"okenizer"],[1,"\n{"]],"start1":38,"start2":38,"length1":8,"length2":10}]],"length":48,"saved":false}
+{"ts":1357412761517,"patch":[[{"diffs":[[0,"enizer\n{"],[1,"\n    "]],"start1":40,"start2":40,"length1":8,"length2":13}]],"length":53,"saved":false}
+{"ts":1357412763712,"patch":[[{"diffs":[[0,"r\n{\n    "],[1,"\n}"]],"start1":45,"start2":45,"length1":8,"length2":10}]],"length":55,"saved":false}
+{"ts":1357412769143,"patch":[[{"diffs":[[0,"r\n{\n    "],[1,"pro"],[0,"\n}"]],"start1":45,"start2":45,"length1":10,"length2":13}]],"length":58,"saved":false}
+{"ts":1357412771941,"patch":[[{"diffs":[[0,"\n    pro"],[1,"tected "],[0,"\n}"]],"start1":48,"start2":48,"length1":10,"length2":17}]],"length":65,"saved":false}

@@ -1,6 +1,9 @@
 {
     "name": "dalia-it/rough",
     "description": "Genrated source code with embeded macros\"",
+    "autoload": {
+        "psr-0": { "daliaIT\\rough": "src/" }
+    },
     "authors": [
         {
             "name": "Oliver Anan",
@@ -8,6 +11,16 @@
         }
     ],
     "require": {
-
+        "dalia-it/clayball": "dev-master"
+    },
+    "extra":{
+        "dalia-it":{
+            "rough":{
+                "build":{
+                    "source": "src/",
+                    "output": "build/"
+                }
+            }
+        }
     }
 }

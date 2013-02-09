@@ -1,0 +1,53 @@
+{"ts":1360272415501,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1360272423223,"patch":[[{"diffs":[[1,"<?php\nnamespace daliaIT\\rough;\nclass ClassFileFinder{\n    public function getClassFileName($class){\n        $reflect = new ReflectionClass($class);\n        return $reflect->getFileName();\n    }\n}"]],"start1":0,"start2":0,"length1":0,"length2":195}]],"length":195,"saved":false}
+{"ts":1360272427746,"patch":[[{"diffs":[[0,";\nclass "],[1,"Composer"],[0,"ClassFil"]],"start1":29,"start2":29,"length1":16,"length2":24}]],"length":203,"saved":false}
+{"ts":1360272432033,"patch":[[{"diffs":[[0,"leFinder"],[1," extends"],[0,"{\n    pu"]],"start1":52,"start2":52,"length1":16,"length2":24}]],"length":211,"saved":false}
+{"ts":1360272439192,"patch":[[{"diffs":[[0," extends"],[1," "],[0,"{\n    pu"]],"start1":60,"start2":60,"length1":16,"length2":17}]],"length":212,"saved":false}
+{"ts":1360272440426,"patch":[[{"diffs":[[0,"extends "],[1,"ClassFileFinder\n"],[0,"{\n    pu"]],"start1":61,"start2":61,"length1":16,"length2":32}]],"length":228,"saved":false}
+{"ts":1360272476773,"patch":[[{"diffs":[[0,"inder\n{\n"],[1,"    \n"],[0,"    publ"]],"start1":79,"start2":79,"length1":16,"length2":21}]],"length":233,"saved":false}
+{"ts":1360272481675,"patch":[[{"diffs":[[0,"r\n{\n    "],[1,"public function _"],[0,"\n    pub"]],"start1":83,"start2":83,"length1":16,"length2":33}]],"length":250,"saved":false}
+{"ts":1360272484291,"patch":[[{"diffs":[[0,"nction _"],[1,"_construct"],[0,"\n    pub"]],"start1":100,"start2":100,"length1":16,"length2":26}]],"length":260,"saved":false}
+{"ts":1360272486786,"patch":[[{"diffs":[[0,"onstruct"],[1,"()"],[0,"\n    pub"]],"start1":110,"start2":110,"length1":16,"length2":18}]],"length":262,"saved":false}
+{"ts":1360272491143,"patch":[[{"diffs":[[0,"nstruct("],[1,"$load"],[0,")\n    pu"]],"start1":111,"start2":111,"length1":16,"length2":21}]],"length":267,"saved":false}
+{"ts":1360272492759,"patch":[[{"diffs":[[0,"ct($load"],[1,"er"],[0,")\n    pu"]],"start1":116,"start2":116,"length1":16,"length2":18}]],"length":269,"saved":false}
+{"ts":1360272865905,"patch":[[{"diffs":[[0,"$loader)"],[1,"{\n        \n    }"],[0,"\n    pub"]],"start1":119,"start2":119,"length1":16,"length2":32}]],"length":285,"saved":false}
+{"ts":1360273086004,"patch":[[{"diffs":[[0,"        "],[1,"var_"],[0,"\n    }\n "]],"start1":129,"start2":129,"length1":16,"length2":20}]],"length":289,"saved":false}
+{"ts":1360273088617,"patch":[[{"diffs":[[0,"    var_"],[1,"dump($)"],[0,"\n    }\n "]],"start1":133,"start2":133,"length1":16,"length2":23}]],"length":296,"saved":false}
+{"ts":1360273090063,"patch":[[{"diffs":[[0,"r_dump($"],[1,"load"],[0,")\n    }\n"]],"start1":139,"start2":139,"length1":16,"length2":20}]],"length":300,"saved":false}
+{"ts":1360273091448,"patch":[[{"diffs":[[0,"mp($load"],[1,"er"],[0,")\n    }\n"]],"start1":143,"start2":143,"length1":16,"length2":18}]],"length":302,"saved":false}
+{"ts":1360273095578,"patch":[[{"diffs":[[0,"$loader)"],[1,";"],[0,"\n    }\n "]],"start1":146,"start2":146,"length1":16,"length2":17}]],"length":303,"saved":false}
+{"ts":1360273102483,"patch":[[{"diffs":[[0,";\n    }\n"],[1,"    \n"],[0,"    publ"]],"start1":154,"start2":154,"length1":16,"length2":21}]],"length":308,"saved":false}
+{"ts":1360289847454,"patch":[[{"diffs":[[0,"inder\n{\n"],[1,"    \n"],[0,"    publ"]],"start1":79,"start2":79,"length1":16,"length2":21}]],"length":313,"saved":false}
+{"ts":1360289855137,"patch":[[{"diffs":[[0,"    "],[-1,"$reflect = new ReflectionClass($class);\n        return $reflect->getFileName();"],[0,"\n   "]],"start1":222,"start2":222,"length1":87,"length2":8}]],"length":234,"saved":false}
+{"ts":1360291045766,"patch":[[{"diffs":[[0,"\\rough;\n"],[1,"\n"],[0,"class Co"]],"start1":23,"start2":23,"length1":16,"length2":17}]],"length":235,"saved":false}
+{"ts":1360291047482,"patch":[[{"diffs":[[0,"\\rough;\n"],[1,"use "],[0,"\nclass C"]],"start1":23,"start2":23,"length1":16,"length2":20}]],"length":239,"saved":false}
+{"ts":1360291049240,"patch":[[{"diffs":[[0,"gh;\nuse "],[1,"Composer\\Autoload\\ClassLoader"],[0,"\nclass C"]],"start1":27,"start2":27,"length1":16,"length2":45}]],"length":268,"saved":false}
+{"ts":1360291050955,"patch":[[{"diffs":[[0,"ssLoader"],[1,";"],[0,"\nclass C"]],"start1":56,"start2":56,"length1":16,"length2":17}]],"length":269,"saved":false}
+{"ts":1360291062909,"patch":[[{"diffs":[[0,"nstruct("],[1,"ClassLoader "],[0,"$loader)"]],"start1":151,"start2":151,"length1":16,"length2":28}]],"length":281,"saved":false}
+{"ts":1360291111165,"patch":[[{"diffs":[[0,"inder\n{\n    "],[1,"$l"],[0,"\n    public "]],"start1":114,"start2":114,"length1":24,"length2":26}]],"length":283,"saved":false}
+{"ts":1360291113236,"patch":[[{"diffs":[[0,"{\n    $l"],[1,"oader ="],[0,"\n    pub"]],"start1":120,"start2":120,"length1":16,"length2":23}]],"length":290,"saved":false}
+{"ts":1360291115985,"patch":[[{"diffs":[[0,"loader ="],[1," loader"],[0,"\n    pub"]],"start1":127,"start2":127,"length1":16,"length2":23}]],"length":297,"saved":false}
+{"ts":1360291275959,"patch":[[{"diffs":[[0,"inder\n{\n"],[1,"    \n"],[0,"    $loa"]],"start1":114,"start2":114,"length1":16,"length2":21}]],"length":302,"saved":false}
+{"ts":1360291279321,"patch":[[{"diffs":[[0,"inder\n{\n    "],[1,"protected"],[0,"\n    $loader"]],"start1":114,"start2":114,"length1":24,"length2":33}]],"length":311,"saved":false}
+{"ts":1360291285132,"patch":[[{"diffs":[[0,"otected\n"],[1,"    "],[0,"    $loa"]],"start1":128,"start2":128,"length1":16,"length2":20}]],"length":315,"saved":false}
+{"ts":1360291294093,"patch":[[{"diffs":[[0,"ader"],[-1," = loader"],[1,";"],[0,"\n   "]],"start1":147,"start2":147,"length1":17,"length2":9}]],"length":307,"saved":false}
+{"ts":1360291316867,"patch":[[{"diffs":[[0,"loader;\n"],[1,"        \n"],[0,"    publ"]],"start1":145,"start2":145,"length1":16,"length2":25}]],"length":316,"saved":false}
+{"ts":1360291319996,"patch":[[{"diffs":[[0,"oader){\n"],[1,"        \n"],[0,"        "]],"start1":208,"start2":208,"length1":16,"length2":25}]],"length":325,"saved":false}
+{"ts":1360291321501,"patch":[[{"diffs":[[0,"r){\n        "],[1,"$t"],[0,"\n        var"]],"start1":212,"start2":212,"length1":24,"length2":26}]],"length":327,"saved":false}
+{"ts":1360291323019,"patch":[[{"diffs":[[0,"      $t"],[1,"his"],[0,"\n       "]],"start1":218,"start2":218,"length1":16,"length2":19}]],"length":330,"saved":false}
+{"ts":1360291326205,"patch":[[{"diffs":[[0,"   $this"],[1,"->loader "],[0,"\n       "]],"start1":221,"start2":221,"length1":16,"length2":25}]],"length":339,"saved":false}
+{"ts":1360291327604,"patch":[[{"diffs":[[0,">loader "],[1,"= "],[0,"\n       "]],"start1":230,"start2":230,"length1":16,"length2":18}]],"length":341,"saved":false}
+{"ts":1360291328644,"patch":[[{"diffs":[[0,"oader = "],[1,"$l"],[0,"\n       "]],"start1":232,"start2":232,"length1":16,"length2":18}]],"length":343,"saved":false}
+{"ts":1360291330895,"patch":[[{"diffs":[[0,"der = $l"],[1,"oader"],[0,"\n       "]],"start1":234,"start2":234,"length1":16,"length2":21}]],"length":348,"saved":false}
+{"ts":1360291332157,"patch":[[{"diffs":[[0," $loader"],[1,";"],[0,"\n       "]],"start1":239,"start2":239,"length1":16,"length2":17}]],"length":349,"saved":false}
+{"ts":1360291335211,"patch":[[{"diffs":[[0,"er;\n"],[-1,"        var_dump($loader);\n"],[0,"    "]],"start1":245,"start2":245,"length1":35,"length2":8}]],"length":322,"saved":false}
+{"ts":1360291380656,"patch":[[{"diffs":[[0,"s){\n        "],[1,"return $"],[0,"\n    }\n}"]],"start1":302,"start2":302,"length1":20,"length2":28}]],"length":330,"saved":false}
+{"ts":1360291382934,"patch":[[{"diffs":[[0,"return $"],[1,"this"],[0,"\n    }\n}"]],"start1":314,"start2":314,"length1":16,"length2":20}]],"length":334,"saved":false}
+{"ts":1360291384031,"patch":[[{"diffs":[[0,"rn $this"],[1,"-"],[0,"\n    }\n}"]],"start1":318,"start2":318,"length1":16,"length2":17}]],"length":335,"saved":false}
+{"ts":1360291387005,"patch":[[{"diffs":[[0,"n $this-"],[1,">loader"],[0,"\n    }\n}"]],"start1":319,"start2":319,"length1":16,"length2":23}]],"length":342,"saved":false}
+{"ts":1360291389171,"patch":[[{"diffs":[[0,"->loader"],[1,"->"],[0,"\n    }\n}"]],"start1":326,"start2":326,"length1":16,"length2":18}]],"length":344,"saved":false}
+{"ts":1360291543617,"patch":[[{"diffs":[[0,"loader->"],[1,"findFile"],[0,"\n    }\n}"]],"start1":328,"start2":328,"length1":16,"length2":24}]],"length":352,"saved":false}
+{"ts":1360291545314,"patch":[[{"diffs":[[0,"findFile"],[1,"($c)"],[0,"\n    }\n}"]],"start1":336,"start2":336,"length1":16,"length2":20}]],"length":356,"saved":false}
+{"ts":1360291546117,"patch":[[{"diffs":[[0,"dFile($c"],[1,"las"],[0,")\n    }\n"]],"start1":339,"start2":339,"length1":16,"length2":19}]],"length":359,"saved":false}
+{"ts":1360291547326,"patch":[[{"diffs":[[0,"le($clas"],[1,"s"],[0,")\n    }\n"]],"start1":342,"start2":342,"length1":16,"length2":17}]],"length":360,"saved":false}
+{"ts":1360291548907,"patch":[[{"diffs":[[0,"($class)"],[1,";"],[0,"\n    }\n}"]],"start1":344,"start2":344,"length1":16,"length2":17}]],"length":361,"saved":false}
