@@ -2,7 +2,7 @@
 call_user_func( function(){
     $autoloader = require __DIR__."/../autoload.php";
     $finder = new daliaIT\rough\ComposerClassFileFinder($autoloader);
-    daliaIT\rough\ImportMacro::setClassFileFinder($finder);
+    daliaIT\rough\macro\ImportMacro::setClassFileFinder($finder);
     daliaIT\clayball\YamlAppParser::mk()
     ->build(
         dirname(__DIR__).'/app/rough.yaml',

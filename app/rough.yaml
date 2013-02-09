@@ -6,10 +6,10 @@ commands:
         help: >
             Runs all embeded macros
         macros:
-            get:    daliaIT\rough\GetMacro
-            set:    daliaIT\rough\SetMacro
-            access: daliaIT\rough\AccessMacro
-            import: daliaIT\rough\ImportMacro
+            get:    daliaIT\rough\macro\GetMacro
+            set:    daliaIT\rough\macro\SetMacro
+            access: daliaIT\rough\macro\AccessMacro
+            import: daliaIT\rough\macro\ImportMacro
             
     which:
          controller: daliaIT\rough\command\Which
