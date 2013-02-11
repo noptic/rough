@@ -15,3 +15,8 @@ commands:
          controller: daliaIT\rough\command\Which
          help: >
             Prints which file the autoloader would include for the class.
+            
+    index:
+        controller: daliaIT\rough\command\CreateIndex
+        help: >
+            Create a list of class definitions.

@@ -6,6 +6,7 @@ use RuntimeException,
     daliaIT\rough\MacroLib,
     daliaIT\rough\FileSearcher,
     Symfony\Component\Console\Input\InputInterface,
+    Symfony\Component\Console\Input\ArrayInput,
     Symfony\Component\Console\Output\OutputInterface,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Input\InputArgument;
@@ -13,10 +14,12 @@ use RuntimeException,
 class RunMacros extends Command
 {
     protected
-        #:Parser
+    #:Parser
         $parser,
-        #:OutputInterface
-        $out;
+    #:OutputInterface
+        $out,
+    #:InputInterface
+        $in;
         
     protected function configure()
     {
@@ -48,12 +51,24 @@ class RunMacros extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->out = $output;
+        $this->in = $input;
         $buildFilePath = getcwd().'/'.$input->getArgument('source');
         $this->buildFiles(
             dirname($buildFilePath),
             $this->getBuildInfo($buildFilePath)
         );
         return $this;    
+    }
+    
+    protected function updateIndex(){    
+        $input = new ArrayInput(array(
+            'command'   => 'index',
+            'source'    => $this->in->getArgument('source')
+        ));
+        $this
+            ->getApplication()
+            ->find('index')
+            ->run($input, $this->out);
     }
     
     protected function getBuildInfo($buildFilePath){
@@ -86,9 +101,13 @@ class RunMacros extends Command
     }
     
     protected function buildFiles($base, $buildInfo){
-        $files      = $this->getTargetFiles($base, $buildInfo);
+        $this->updateIndex();
+        $files = json_decode(file_get_contents("$base/index.json"));
+        $this->out->writeln("run macros");
         foreach($files as $shortName => $file){
-            $this->out->writeln("build $shortName");
+            if($this->in->getOption('verbose')){
+                $this->out->writeln("  $shortName");
+            }
             $dir = trim($buildInfo['output'],'/');
             $out = "$base/$dir/$shortName";
             $this->buildFile($file,  $out);
@@ -116,23 +135,5 @@ class RunMacros extends Command
     
     protected function processContents($contents){
         return $this->parser->replace($contents);
-    }
-    
-    protected function getTargetFiles($base, $buildInfo){
-        $files = array();
-        $searcher = new FileSearcher();
-        foreach( ((array) $buildInfo['source']) as $src){
-            $src = trim($src,'/');
-            $path       = "$base/$src";
-            $pathLength = strlen($path);
-            $newFiles = $searcher->searchRecursive(
-                '*.php',
-                $path
-            );
-            foreach($newFiles as $newFile){
-                $files[ substr($newFile, $pathLength) ] = $newFile;
-            }
-        }
-        return $files;
     }
 }
