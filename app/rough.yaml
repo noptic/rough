@@ -10,6 +10,7 @@ commands:
             set:    daliaIT\rough\macro\SetMacro
             access: daliaIT\rough\macro\AccessMacro
             import: daliaIT\rough\macro\ImportMacro
+            trait:  daliaIT\rough\macro\TraitMacro
             
     which:
          controller: daliaIT\rough\command\Which
