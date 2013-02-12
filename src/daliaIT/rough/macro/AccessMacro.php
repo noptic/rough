@@ -14,29 +14,24 @@ are handled by GetMacro and SetMacro
 Syntax
 --------------------------------------------------------------------------------
 
-    access <getAcess> <setAccess> <properties> [type=mixed]
+    access <visibilty> <properties> [type=mixed]
     
-getAccess
-:   The visibility of the getter method.
-:    No getter method will be generated if the value eqals 'none'.
-:    Single word.
-:    Required argument.
-    
-setAccess
-:   The visibility of the setter method.
-    No setter method will be generated if the value eqals 'none'.
-:   Single word.
-:   Required argument.
+visibilty
+ - The visibility of the getter and setter method.
+ - No method will be generated if the value eqals 'none'.
+ -  Single word or array. First element defines the visivilty of the getter
+    second the visibilty of the setter
+ - Required argument.
     
 properties
-:   The properties which the getters and setters point to.
-:   Single word or list.
-:   Required argument.
+ - The properties which the getters and setters point to.
+ - Single word or array.
+:- Required argument.
     
 type
-:   The type of the property the getter points to.
-:   Type hinting and validation are delegated to GetMacro and SetMacro.
-:   Optional argument. Default is 'mixed'
+ - The type of the property.
+ - Type hinting and validation are delegated to GetMacro and SetMacro.
+ - Optional argument. Default is 'mixed'
      
 Examples
 --------------------------------------------------------------------------------
@@ -47,7 +42,7 @@ Allow public read acces to name but do not create a setter:
         protected 
             $name;
             
-        #@access public none  name#
+        #@access [public none]  name#
         
         public function getName(){
             return $this->name;
@@ -62,7 +57,7 @@ Create typesave setter:
         protected
             $name;
             
-        #@access public public name string#
+        #@access public name string#
         
         #:string
         public function getName(){
@@ -90,7 +85,7 @@ create multiple setters and getters:
             $givenName,
             $familyName;
             
-        #@access public public [givenName familyName] string#
+        #@access public [givenName familyName] string#
         
         #:string
         public function getGivenName(){
@@ -130,22 +125,37 @@ Source
 --------------------------------------------------------------------------------
 /*/
 namespace daliaIT\rough\macro;
-use Exception;
+use Exception,
+    InvalidArgumentException;
 class AccessMacro{
+    
     public function __invoke($args){
-        if(count($args) < 3){
+        if(count($args) < 2){
             throw new Exception(
                 "Missing required macro argument." 
-                ."The macro 'access' requires at least 3 arguments:\n"
+                ."The macro 'access' requires at least 2 arguments:\n"
                 ."<getAccess> <setAccess> <properties>"
             );
         }
-        $getAccess  = $args[0];
-        $setAccess  = $args[1];
-        $hints      = (isset($args[3]))
-            ? $args[3]
+        $access = $args[0];
+        if(is_array($access)){
+            if(count($access) != 2){
+                throw new InvalidArgumentException(
+                    "Invalid parameter: parameter 0 must be a single argument "
+                    ."or a array woth 2 arguments."    
+                ); 
+            }
+            $getAccess  = $access[0];
+            $setAccess  = $access[1];
+        } else {
+            $getAccess  = $access;
+            $setAccess  = $access;
+        }
+
+        $hints      = (isset($args[2]))
+            ? $args[2]
             : false;
-        $properties = (array) $args[2];
+        $properties = (array) $args[1];
         $getMacro   = new GetMacro();
         $setMacro   = new SetMacro();
         $result     = '';
