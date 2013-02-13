@@ -25,8 +25,8 @@ class RunMacros extends Command
     {
         $this
             ->addArgument(
-                'source',
-                InputArgument::REQUIRED,
+                'path',
+                InputArgument::OPTIONAL,
                 'The file containing the build settings'
             );
         $macros = $this->createMacros($this->context['macros']);
@@ -52,7 +52,12 @@ class RunMacros extends Command
     {
         $this->out = $output;
         $this->in = $input;
-        $buildFilePath = getcwd().'/'.$input->getArgument('source');
+        $path = $input->getArgument('path');
+        if(!$path){
+            $path = 'composer.json';
+        }
+        $buildFilePath = getcwd().'/'.$path;
+        $this->updateIndex($path);
         $this->buildFiles(
             dirname($buildFilePath),
             $this->getBuildInfo($buildFilePath)
@@ -60,10 +65,10 @@ class RunMacros extends Command
         return $this;    
     }
     
-    protected function updateIndex(){    
+    protected function updateIndex($path){    
         $input = new ArrayInput(array(
             'command'   => 'index',
-            'source'    => $this->in->getArgument('source')
+            'source'    => $path
         ));
         $this
             ->getApplication()
@@ -101,7 +106,6 @@ class RunMacros extends Command
     }
     
     protected function buildFiles($base, $buildInfo){
-        $this->updateIndex();
         $files = json_decode(file_get_contents("$base/index.json"));
         $this->out->writeln("run macros");
         foreach($files as $shortName => $file){
