@@ -5,7 +5,7 @@ class MacroLib implements IMacroLib{
     protected
         $macros = array();
         
-    function runMacro($name,$args,$parser){
+    public function runMacro($name,$args,$parser){
         $macro = $this->getMacro($name);
         return $macro($args,$parser);
     }
@@ -23,7 +23,7 @@ class MacroLib implements IMacroLib{
         return $this;
     }
     
-    #@access public public macros array#
+    #@access public macros array#
     
     #:array
     public function getMacros(){

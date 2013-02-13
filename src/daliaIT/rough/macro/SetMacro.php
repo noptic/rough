@@ -218,7 +218,7 @@ class SetMacro{
         return $result;
     }
     
-    #@access public public validationFunctions array#
+    #@access public validationFunctions array#
     
     #:array
     public function getValidationFunctions(){

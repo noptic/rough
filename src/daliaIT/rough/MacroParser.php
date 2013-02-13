@@ -56,7 +56,7 @@ class MacroParser
         return preg_replace_callback($this->pattern, $callback, $input);
     }
     
-    #@access public public macroLib IMacroLib#
+    #@access public macroLib IMacroLib#
     
     #:IMacroLib
     public function getMacroLib(){
@@ -70,7 +70,7 @@ class MacroParser
     }
     #@#
 
-    #@access public public pattern string#
+    #@access public pattern string#
     
     #:string
     public function getPattern(){

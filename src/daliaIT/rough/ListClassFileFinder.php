@@ -16,7 +16,7 @@ class ListClassFileFinder extends ClassFileFinder{
         return $this->files[$class];
     }
     
-    #@access public public files array#
+    #@access public files array#
     
     #:array
     public function getFiles(){

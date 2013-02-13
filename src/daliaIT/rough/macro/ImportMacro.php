@@ -90,7 +90,7 @@ class ImportMacro{
         static::$classFileFinder = $value;
     }
     
-    #@access public public stripTokens array#
+    #@access public stripTokens array#
     
     #:array
     public function getStripTokens(){
