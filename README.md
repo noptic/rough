@@ -113,11 +113,11 @@ If you want to use a differnt file you can pass it as an parameter.
 
 Default Macrosos 
 --------------------------------------------------------------------------------
-- [Acess](blob/master/src/daliaIT/rough/macro/AccessMacro.php)
-- [Get](blob/master/src/daliaIT/rough/macro/AccessMacro.php)
-- [import](blob/master/src/daliaIT/rough/macro/AccessMacro.php)
-- [set](blob/master/src/daliaIT/rough/macro/AccessMacro.php)
-- [trait](blob/master/src/daliaIT/rough/macro/AccessMacro.php)
+- [Acess](src/daliaIT/rough/macro/AccessMacro.php)
+- [Get](src/daliaIT/rough/macro/AccessMacro.php)
+- [import](src/daliaIT/rough/macro/AccessMacro.php)
+- [set](src/daliaIT/rough/macro/AccessMacro.php)
+- [trait](src/daliaIT/rough/macro/AccessMacro.php)
 
 imports and trait
 --------------------------------------------------------------------------------    
