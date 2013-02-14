@@ -19,8 +19,8 @@ Syntax
 visibilty
  - The visibility of the getter and setter method.
  - No method will be generated if the value eqals 'none'.
- -  Single word or array. First element defines the visivilty of the getter
-    second the visibilty of the setter
+ - Single word or array. First element defines the visivilty of the getter
+   second the visibilty of the setter
  - Required argument.
     
 properties
