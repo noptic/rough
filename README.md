@@ -58,7 +58,7 @@ Some macros support passing a *array* as an arument:
         $name,
         $email;
         
-    #@get [name email] string@#
+    #@get public [name email] string@#
     
 In the example above the 'get' macro will be called with the two arguments 
 array('name','email') and 'string'.
